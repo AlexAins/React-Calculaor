@@ -14,12 +14,18 @@ function Calculator() {
     }
 
     const RunEquation = () => {
-        // eslint-disable-next-line
-        setResult(eval(equation));
-        // eslint-disable-next-line
-        setSavedAnswer(eval(equation));
-        setEquation("");
-        setDisplayAnswer(true);
+        try {
+            // eslint-disable-next-line
+            setResult(eval(equation));
+            // eslint-disable-next-line
+            setSavedAnswer(eval(equation));
+            setEquation("");
+            setDisplayAnswer(true);
+        } catch (error) {
+            setResult("Error");
+            setEquation("");
+            setDisplayAnswer(true);
+        }
     }
 
     const ClearEquation = () => {
