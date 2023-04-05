@@ -3,15 +3,27 @@ import {React, useState} from "react";
 function Calculator() {
 
     const [equation, setEquation] = useState("");
+    const [result, setResult] = useState("");
+    const [savedAnswer, setSavedAnswer] = useState("");
 
     const CreateEquation = (e) => {
         setEquation(equation + e.target.value);
     }
 
-    const [result, setResult] = useState("");
-
     const RunEquation = () => {
+        // eslint-disable-next-line
         setResult(eval(equation));
+        // eslint-disable-next-line
+        setSavedAnswer(eval(equation));
+    }
+
+    const ClearEquation = () => {
+        setEquation("");
+        setResult("");
+    }
+
+    const EditEquation = () => {
+        setEquation(equation.slice(0,-1))
     }
 
     return(
@@ -38,7 +50,13 @@ function Calculator() {
                 <button value={"/"} onClick={CreateEquation}>/</button>
                 <button value={"*"} onClick={CreateEquation}>*</button>
                 <button value={"="} onClick={RunEquation}>=</button>
-                <button value={result} onClick={CreateEquation}>Ans</button>
+                <button value={"("} onClick={CreateEquation}>(</button>
+                <button value={")"} onClick={CreateEquation}>)</button>
+                <button value={savedAnswer} onClick={CreateEquation}>Ans</button>
+            </div>
+            <div>
+                <button onClick={ClearEquation}>Clear</button>
+                <button onClick={EditEquation}>Delete</button>
             </div>
         </div>
     )
