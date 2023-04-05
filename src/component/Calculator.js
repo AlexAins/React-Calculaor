@@ -47,7 +47,16 @@ function Calculator() {
             }
             else if (keySelect === "Enter"){
                 document.querySelector(`button[value='=']`).click();
-            }    
+            }
+            else if (keySelect === "Backspace"){
+                document.getElementById("deleteButton").click();
+            }
+            else if (keySelect === "c"){
+                document.getElementById("clearButton").click();
+            }
+            else if (keySelect === "a"){
+                document.getElementById("ansButton").click();
+            }  
         }
 
         window.addEventListener("keydown", handleKeyDown);
@@ -80,7 +89,7 @@ function Calculator() {
                             <button type="button" className="btn btn-outline-dark" value={9} onClick={CreateEquation}> 9 </button>
                             <button type="button" className="btn btn-outline-dark" value={0} onClick={CreateEquation}> 0 </button>
                             <button type="button" className="btn btn-outline-dark" value={"."} onClick={CreateEquation}>.</button>
-                            <button type="button" className="btn btn-outline-dark" value={savedAnswer} onClick={CreateEquation}>Ans</button>
+                            <button id="ansButton" type="button" className="btn btn-outline-dark" value={savedAnswer} onClick={CreateEquation}>Ans</button>
                         </div>
                     </div>
                     <div className="col-4">
@@ -98,8 +107,8 @@ function Calculator() {
                     </div>
                 </div> 
                 <div className="container pb-3">
-                    <button type="button" className="btn btn-outline-dark mx-2" onClick={ClearEquation}>Clear</button>
-                    <button type="button" className="btn btn-outline-dark mx-2" onClick={EditEquation}>Delete</button>
+                    <button id ="clearButton" type="button" className="btn btn-outline-dark mx-2" onClick={ClearEquation}>Clear</button>
+                    <button id ="deleteButton" type="button" className="btn btn-outline-dark mx-2" onClick={EditEquation}>Delete</button>
                 </div>
             </div>
         </div>
