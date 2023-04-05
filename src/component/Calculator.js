@@ -5,9 +5,11 @@ function Calculator() {
     const [equation, setEquation] = useState("");
     const [result, setResult] = useState("");
     const [savedAnswer, setSavedAnswer] = useState("");
+    const [counter, setCounter] = useState(0);
 
     const CreateEquation = (e) => {
         setEquation(equation + e.target.value);
+        setCounter(counter + 1);
     }
 
     const RunEquation = () => {
@@ -16,11 +18,13 @@ function Calculator() {
         // eslint-disable-next-line
         setSavedAnswer(eval(equation));
         setEquation("");
+        setCounter(0)
     }
 
     const ClearEquation = () => {
         setEquation("");
         setResult("");
+        setCounter(0)
     }
 
     const EditEquation = () => {
@@ -51,6 +55,7 @@ function Calculator() {
                 <button value={"/"} onClick={CreateEquation}>/</button>
                 <button value={"*"} onClick={CreateEquation}>*</button>
                 <button value={"="} onClick={RunEquation}>=</button>
+                <button value={"."} onClick={CreateEquation}>.</button>
                 <button value={"("} onClick={CreateEquation}>(</button>
                 <button value={")"} onClick={CreateEquation}>)</button>
                 <button value={savedAnswer} onClick={CreateEquation}>Ans</button>
