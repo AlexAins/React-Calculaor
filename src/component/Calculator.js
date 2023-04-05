@@ -1,15 +1,16 @@
 import {React, useState} from "react";
+import "./Calculator.css";
 
 function Calculator() {
 
-    const [equation, setEquation] = useState("");
-    const [result, setResult] = useState("");
-    const [savedAnswer, setSavedAnswer] = useState("");
-    const [counter, setCounter] = useState(0);
+    const [equation, setEquation] = useState(" ");
+    const [result, setResult] = useState(" ");
+    const [savedAnswer, setSavedAnswer] = useState(" ");
+    const [displayAnswer, setDisplayAnswer] = useState(false);
 
     const CreateEquation = (e) => {
         setEquation(equation + e.target.value);
-        setCounter(counter + 1);
+        setDisplayAnswer(false)
     }
 
     const RunEquation = () => {
@@ -18,13 +19,12 @@ function Calculator() {
         // eslint-disable-next-line
         setSavedAnswer(eval(equation));
         setEquation("");
-        setCounter(0)
+        setDisplayAnswer(true);
     }
 
     const ClearEquation = () => {
         setEquation("");
         setResult("");
-        setCounter(0);
     }
 
     const EditEquation = () => {
@@ -33,12 +33,13 @@ function Calculator() {
 
     return(
         <div className="container d-flex justify-content-center align-items-center flex-grow-1">
-            <div className="card">
-                <div className="row">
-                    <p>{equation}</p>
-                    <p>{result}</p>
+            <div className="card ">
+                <div className="row m-3 text-bg-secondary rounded">
+                    <div className="container d-flex justify-content-start mathDisplay">
+                        {displayAnswer ? <p className="m-0 ps-3 align-self-center fs-2">{result}</p> : <p className="m-0 ps-3 align-self-center fs-2">{equation}</p> }
+                    </div>
                 </div>
-                <div className="row">
+                <div className="row m-0 py-3">
                     <div className="col-8">
                         <div className="row-cols-3">
                             <button type="button" className="btn btn-outline-dark" value={1} onClick={CreateEquation}> 1 </button>
@@ -69,7 +70,7 @@ function Calculator() {
                         </div>
                     </div>
                 </div> 
-                <div>
+                <div className="container py-2">
                     <button type="button" className="btn btn-outline-dark" onClick={ClearEquation}>Clear</button>
                     <button type="button" className="btn btn-outline-dark" onClick={EditEquation}>Delete</button>
                 </div>

@@ -1,0 +1,5 @@
+.mathDisplay{
+    min-height: 80px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
