@@ -24,7 +24,7 @@ function Calculator() {
     const ClearEquation = () => {
         setEquation("");
         setResult("");
-        setCounter(0)
+        setCounter(0);
     }
 
     const EditEquation = () => {
@@ -41,35 +41,37 @@ function Calculator() {
                 <div className="row">
                     <div className="col-8">
                         <div className="row-cols-3">
-                            <button value={1} onClick={CreateEquation}> 1 </button>
-                            <button value={2} onClick={CreateEquation}> 2 </button>
-                            <button value={3} onClick={CreateEquation}> 3 </button>
-                            <button value={4} onClick={CreateEquation}> 4 </button>
-                            <button value={5} onClick={CreateEquation}> 5 </button>
-                            <button value={6} onClick={CreateEquation}> 6 </button>
-                            <button value={7} onClick={CreateEquation}> 7 </button>
-                            <button value={8} onClick={CreateEquation}> 8 </button>
-                            <button value={9} onClick={CreateEquation}> 9 </button>
-                            <button value={0} onClick={CreateEquation}> 0 </button>
-                            <button value={"."} onClick={CreateEquation}>.</button>
-                            <button value={savedAnswer} onClick={CreateEquation}>Ans</button>
+                            <button type="button" class="btn btn-outline-dark" value={1} onClick={CreateEquation}> 1 </button>
+                            <button type="button" class="btn btn-outline-dark" value={2} onClick={CreateEquation}> 2 </button>
+                            <button type="button" class="btn btn-outline-dark" value={3} onClick={CreateEquation}> 3 </button>
+                            <button type="button" class="btn btn-outline-dark" value={4} onClick={CreateEquation}> 4 </button>
+                            <button type="button" class="btn btn-outline-dark" value={5} onClick={CreateEquation}> 5 </button>
+                            <button type="button" class="btn btn-outline-dark" value={6} onClick={CreateEquation}> 6 </button>
+                            <button type="button" class="btn btn-outline-dark" value={7} onClick={CreateEquation}> 7 </button>
+                            <button type="button" class="btn btn-outline-dark" value={8} onClick={CreateEquation}> 8 </button>
+                            <button type="button" class="btn btn-outline-dark" value={9} onClick={CreateEquation}> 9 </button>
+                            <button type="button" class="btn btn-outline-dark" value={0} onClick={CreateEquation}> 0 </button>
+                            <button type="button" class="btn btn-outline-dark" value={"."} onClick={CreateEquation}>.</button>
+                            <button type="button" class="btn btn-outline-dark" value={savedAnswer} onClick={CreateEquation}>Ans</button>
                         </div>
                     </div>
                     <div className="col-4">
                         <div className="row-cols-2">
-                            <button value={"+"} onClick={CreateEquation}>+</button>
-                            <button value={"-"} onClick={CreateEquation}>-</button>
-                            <button value={"/"} onClick={CreateEquation}>/</button>
-                            <button value={"*"} onClick={CreateEquation}>*</button>
-                            <button value={"("} onClick={CreateEquation}>(</button>
-                            <button value={")"} onClick={CreateEquation}>)</button>
-                            <button value={"="} onClick={RunEquation}>=</button>
+                            <button type="button" class="btn btn-outline-dark" value={"+"} onClick={CreateEquation}>+</button>
+                            <button type="button" class="btn btn-outline-dark" value={"-"} onClick={CreateEquation}>-</button>
+                            <button type="button" class="btn btn-outline-dark" value={"/"} onClick={CreateEquation}>/</button>
+                            <button type="button" class="btn btn-outline-dark" value={"*"} onClick={CreateEquation}>*</button>
+                            <button type="button" class="btn btn-outline-dark" value={"("} onClick={CreateEquation}>(</button>
+                            <button type="button" class="btn btn-outline-dark" value={")"} onClick={CreateEquation}>)</button>
+                        </div>
+                        <div className="row-cols-1">
+                            <button type="button" class="btn btn-outline-dark" value={"="} onClick={RunEquation}>=</button>
                         </div>
                     </div>
                 </div> 
                 <div>
-                    <button onClick={ClearEquation}>Clear</button>
-                    <button onClick={EditEquation}>Delete</button>
+                    <button type="button" class="btn btn-outline-dark" onClick={ClearEquation}>Clear</button>
+                    <button type="button" class="btn btn-outline-dark" onClick={EditEquation}>Delete</button>
                 </div>
             </div>
         </div>
