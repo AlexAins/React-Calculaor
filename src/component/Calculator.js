@@ -40,7 +40,14 @@ function Calculator() {
 
     useEffect(() => {
         const handleKeyDown = (e) => {
-            console.log(e.key)
+            let keySelect = e.key;
+            const possibleKey = ['0','1','2','3','4','5','6','7','8','9','.','-','+','/','*','(',')']
+            if(possibleKey.includes(keySelect)){
+                document.querySelector(`button[value='${keySelect}']`).click();
+            }
+            else if (keySelect === "Enter"){
+                document.querySelector(`button[value='=']`).click();
+            }    
         }
 
         window.addEventListener("keydown", handleKeyDown);
