@@ -15,6 +15,7 @@ function Calculator() {
         setResult(eval(equation));
         // eslint-disable-next-line
         setSavedAnswer(eval(equation));
+        setEquation("");
     }
 
     const ClearEquation = () => {
