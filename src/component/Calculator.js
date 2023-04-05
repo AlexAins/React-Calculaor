@@ -1,8 +1,9 @@
-import {React, useState} from "react";
+import {React, useState, useEffect} from "react";
 import "./Calculator.css";
 
 function Calculator() {
 
+    // Setting states
     const [equation, setEquation] = useState(" ");
     const [result, setResult] = useState(" ");
     const [savedAnswer, setSavedAnswer] = useState(" ");
@@ -37,6 +38,19 @@ function Calculator() {
         setEquation(equation.slice(0,-1))
     }
 
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            console.log(e.key)
+        }
+
+        window.addEventListener("keydown", handleKeyDown);
+
+        // Included to stop it registering the event twice
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    },[])
+   
     return(
         <div className="container d-flex justify-content-center align-items-center flex-grow-1">
             <div className="card ">
@@ -76,9 +90,9 @@ function Calculator() {
                         </div>
                     </div>
                 </div> 
-                <div className="container py-2">
-                    <button type="button" className="btn btn-outline-dark" onClick={ClearEquation}>Clear</button>
-                    <button type="button" className="btn btn-outline-dark" onClick={EditEquation}>Delete</button>
+                <div className="container pb-3">
+                    <button type="button" className="btn btn-outline-dark mx-2" onClick={ClearEquation}>Clear</button>
+                    <button type="button" className="btn btn-outline-dark mx-2" onClick={EditEquation}>Delete</button>
                 </div>
             </div>
         </div>
