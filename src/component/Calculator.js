@@ -1,7 +1,8 @@
 import {React, useState, useEffect} from "react";
 import "./Calculator.css";
 
-function Calculator() {
+function Calculator(props) {
+    const {lightMode} = props;
 
     // Setting states
     const [equation, setEquation] = useState(" ");
@@ -70,8 +71,8 @@ function Calculator() {
    
     return(
         <div className="container d-flex justify-content-center align-items-center flex-grow-1">
-            <div className="card ">
-                <div className="row m-3 text-bg-secondary rounded">
+            <div className={lightMode ? "card shadow text-bg-light" : "card shadow text-bg-secondary"} id="mainCard">
+                <div className={lightMode ? "row m-3 text-bg-secondary rounded" : "row m-3 text-bg-light rounded"}>
                     <div className="container d-flex justify-content-start mathDisplay">
                         {displayAnswer ? <p className="m-0 ps-3 align-self-center fs-2">{result}</p> : <p className="m-0 ps-3 align-self-center fs-2">{equation}</p> }
                     </div>
