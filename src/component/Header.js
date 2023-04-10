@@ -10,7 +10,7 @@ function Header(props) {
     }
 
     return(
-        <div className="container d-flex justify-content-between align-items-center">
+        <div className="container d-flex justify-content-between align-items-center py-2">
             <div className="flex-grow-0" style={{width: "56px"}}></div>
             <h1 className="flex-grow-1">Calculator</h1>
             <div className="form-check form-switch flex-grow-0 d-flex align-items-center">
