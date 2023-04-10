@@ -34,4 +34,5 @@ If you have any questions, Please contact me through:
 
 ## Deployed Application
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4c78003a-5f69-4435-8ef8-0fd349a12492/deploy-status)](https://app.netlify.com/sites/calculator-react-apps/deploys)
+
 Link to deployed webpage: https://calculator-react-apps.netlify.app/
