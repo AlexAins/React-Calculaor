@@ -12,7 +12,7 @@ function Header(props) {
     return(
         <div className="container d-flex justify-content-between align-items-center py-2">
             <div className="flex-grow-0" style={{width: "56px"}}></div>
-            <h1 className="flex-grow-1">Calculator</h1>
+            <h1 id="headerHeading" className="flex-grow-1">Calculator</h1>
             <div className="form-check form-switch flex-grow-0 d-flex align-items-center">
                 <input className="form-check-input me-2" type="checkbox" role="switch" id="modeSwitch" onClick={handleModeChange}></input>
                 <label className="form-check-label" htmlFor="modeSwitch">
